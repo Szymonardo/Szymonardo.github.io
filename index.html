@@ -1,7 +1,78 @@
-<!DOCTYPE html>
+@model MVC_calculator.Models.Calculator
+
+
+@using (Html.BeginForm())
+
+{
 <html>
+
+<head>
+
+    <style>
+
+        body 
+	{
+            
+		background-color: lightskyblue;
+        
+	}
+
+        
+	.button 
+	{
+            
+		background-color: sandybrown;
+            
+		border-color: orangered;
+           
+		width: 60px;
+           
+		height: 30px;
+        
+	}
+   
+     </style>
+
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    
+<h2 style="color:blue">Kalkulator</h2>
+    
+<form>
+        
+<fieldset>
+           
+@Html.EditorFor(x => x.A) 
+<br /> <br /> 
+@Html.EditorFor(x => x.B)
+            
+<br /> <br />
+            
+<button class="button" input type="submit" value="add" name="command">+</button>
+            
+<button class="button" input type="submit" value="sub" name="command">-</button>
+            
+<button class="button" input type="submit" value="mul" name="command">*</button>
+            
+<button class="button" input type="submit" value="div" name="command">/</button>
+            
+<br /> <br />
+            
+<h2 style="color:red">
+                
+@Html.Label("Wynik :")
+                
+@Html.DisplayFor(x => x.Result)
+            
+</h2>
+        
+</fieldset>
+    
+</form>
+
 </body>
+
 </html>
+}
